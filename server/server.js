@@ -22,6 +22,11 @@ app.use("/api/users", userRoutes);
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/api/comments", commentRoutes);
 
+app.get('/', (req, res) => {
+  res.send('DevLink backend is running ✅');
+});
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

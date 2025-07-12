@@ -7,6 +7,10 @@ const handlevalidation = require("../middleware/handlevalidation");
 
 const router = express.Router();
 
+app.get('/', (req, res) => {
+  res.send('DevLink backend is running ✅');
+});
+
 router.post("/register",validateRegister, handlevalidation, registerUser);
 router.post("/login",validateLogin, handlevalidation, loginUser);
 router.put("/update", authMiddleware, updateProfile);
